@@ -33,3 +33,9 @@ or you can use a basic monitor:
 ```
 
 ;)
+
+
+Helpers:
+
+https://github.com/adrianstevens/WPF-CSharp-2in1-mode-detection
+http://windowsdeveloper.de/artikel/wpf-erkennen-laptop-tablet-175661
