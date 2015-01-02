@@ -58,7 +58,7 @@ namespace System.Device
             get { return _currentDeviceUseMode; }
             set
             {
-                if (_currentDeviceDockedStatus != null)
+                if (_currentDeviceUseMode != value)
                 {
                     EventHandler<DeviceUseModeEventArgs> _deviceUseModeChanged = DeviceUseModeChanged;
                     if (_deviceUseModeChanged != null) { _deviceUseModeChanged(this, new DeviceUseModeEventArgs() { DeviceUseMode = value }); }
@@ -76,7 +76,7 @@ namespace System.Device
             get { return _currentDeviceDockedStatus; }
             set
             {
-                if (_currentDeviceDockedStatus != null)
+                if (_currentDeviceDockedStatus != value)
                 {
                     EventHandler<DeviceDockedStatusEventArgs> _deviceDockedStatusChanged = DeviceDockedStatusChanged;
                     if (_deviceDockedStatusChanged != null) { _deviceDockedStatusChanged(this, new DeviceDockedStatusEventArgs() { IsDocked = value }); }
