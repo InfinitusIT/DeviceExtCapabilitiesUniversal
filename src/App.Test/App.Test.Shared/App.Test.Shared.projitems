@@ -19,5 +19,6 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\laptop.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\tablet.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\windows16.png" />
   </ItemGroup>
 </Project>
