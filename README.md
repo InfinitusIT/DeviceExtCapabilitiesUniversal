@@ -1,4 +1,4 @@
-DeviceExtCapabilitiesUniversal
+Device Extensions Capabilities for Universal Apps
 ==============================
 
 A wrapper for detect a 2in1 convertable's state using C# for Universal Apps. With a basic monitor.
