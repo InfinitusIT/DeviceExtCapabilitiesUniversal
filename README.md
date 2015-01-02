@@ -1,0 +1,2 @@
+DeviceExtCapabilitiesUniversal
+==============================
