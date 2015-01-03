@@ -39,3 +39,9 @@ Helpers:
 
 https://github.com/adrianstevens/WPF-CSharp-2in1-mode-detection
 http://windowsdeveloper.de/artikel/wpf-erkennen-laptop-tablet-175661
+
+Sample screenshots:
+
+https://raw.githubusercontent.com/daemun/DeviceExtCapabilitiesUniversal/master/src/App.Test/App.Test.Shared/Assets/screenshot1.png
+
+https://raw.githubusercontent.com/daemun/DeviceExtCapabilitiesUniversal/master/src/App.Test/App.Test.Shared/Assets/screenshot2.png
