@@ -42,6 +42,5 @@ http://windowsdeveloper.de/artikel/wpf-erkennen-laptop-tablet-175661
 
 Sample screenshots:
 
-https://raw.githubusercontent.com/daemun/DeviceExtCapabilitiesUniversal/master/src/App.Test/App.Test.Shared/Assets/screenshot1.png
-
-https://raw.githubusercontent.com/daemun/DeviceExtCapabilitiesUniversal/master/src/App.Test/App.Test.Shared/Assets/screenshot2.png
+![alt text](/src/App.Test/App.Test.Shared/Assets/screenshot1.png "Screenshoot 1")
+![alt text](/src/App.Test/App.Test.Shared/Assets/screenshot2.png "Screenshoot 2")
