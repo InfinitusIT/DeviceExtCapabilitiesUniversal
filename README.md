@@ -10,7 +10,7 @@ https://www.nuget.org/packages/DeviceExtCapabilitiesUniversal/
 And use like this:
 
 ```
-  var mode = SystemMetricsInfo.GetDeviceSlateMode(); // Unknown, Laptop, Tablet
+  var mode = SystemMetricsInfo.GetDeviceSlateMode(); // Unknown, Normal, Tablet
   var state = SystemMetricsInfo.IsDocked(); // bool
   
 ```
