@@ -78,7 +78,7 @@ namespace App.Test
             Hide();
 
             Show(imgiunknow, e.DeviceUseMode == DeviceUseMode.Unknown);
-            Show(imglaptop, e.DeviceUseMode == DeviceUseMode.Laptop);
+            Show(imglaptop, e.DeviceUseMode == DeviceUseMode.Normal);
             Show(imgtablet, e.DeviceUseMode == DeviceUseMode.Tablet);
 
             tbDeviceState.Text = e.DeviceUseMode.ToString();

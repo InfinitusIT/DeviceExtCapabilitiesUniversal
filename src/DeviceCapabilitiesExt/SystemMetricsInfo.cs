@@ -4,12 +4,28 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Input;
 
 namespace System.Device
 {
 
     public class SystemMetricsInfo
     {
+
+        static SystemMetricsInfo()
+        {
+            TouchCapabilitiesExt = new TouchCapabilities();
+            KeyboardCapabilitiesExt = new KeyboardCapabilities();
+            MouseCapabilitiesExt = new MouseCapabilities();
+        }
+
+        public static TouchCapabilities TouchCapabilitiesExt { get; set; }
+
+        public static KeyboardCapabilities KeyboardCapabilitiesExt { get; set; }
+
+        public static MouseCapabilities MouseCapabilitiesExt { get; set; }
+
+
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
         protected static extern int GetSystemMetrics(InternalDeviceMode deviceMode);
@@ -21,13 +37,26 @@ namespace System.Device
 
             try
             {
-                if (Convert.ToBoolean(GetSystemMetrics(InternalDeviceMode.SM_CONVERTIBLESLATEMODE)))
+                var _convertibleSlateMode = GetSystemMetrics(InternalDeviceMode.SM_CONVERTIBLESLATEMODE);
+
+                if (Convert.ToBoolean(_convertibleSlateMode))
                 {
-                    mode = DeviceUseMode.Laptop;
+                    mode = DeviceUseMode.Normal;
                 }
                 else
                 {
-                    mode = DeviceUseMode.Tablet;
+
+                    if (TouchCapabilitiesExt.TouchPresent != 0)
+                    {
+                        //Has touch, is tablet... Oo HUSduhaisdas
+                        mode = DeviceUseMode.Tablet;
+                    }
+                    else
+                    {
+                        mode = DeviceUseMode.Normal;
+                    }
+
+                    
                 }
             }
             catch (Exception)

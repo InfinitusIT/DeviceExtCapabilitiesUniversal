@@ -9,7 +9,7 @@ namespace System.Device
     public enum DeviceUseMode
     {
         Unknown,
-        Laptop,
+        Normal,
         Tablet
     }
 }

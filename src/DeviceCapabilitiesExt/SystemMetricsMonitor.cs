@@ -31,8 +31,16 @@ namespace System.Device
 
             timerMonitor.Tick += timerMonitor_Tick;
 
+            ResetProps();
+
             timerMonitor.Start();
 
+        }
+
+        private void ResetProps()
+        {
+            CurrentDeviceUseMode = DeviceUseMode.Unknown;
+            CurrentDeviceDockedStatus = false;
         }
 
         void timerMonitor_Tick(object sender, object e)
