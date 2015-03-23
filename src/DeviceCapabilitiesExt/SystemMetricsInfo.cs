@@ -28,7 +28,7 @@ namespace System.Device
 
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
-        protected static extern int GetSystemMetrics(InternalDeviceMode deviceMode);
+        protected static extern int GetSystemMetrics(SystemMetrics deviceMode);
 
         public static DeviceUseMode GetDeviceSlateMode()
         {
@@ -37,7 +37,7 @@ namespace System.Device
 
             try
             {
-                var _convertibleSlateMode = GetSystemMetrics(InternalDeviceMode.SM_CONVERTIBLESLATEMODE);
+                var _convertibleSlateMode = GetSystemMetrics(SystemMetrics.SM_CONVERTABLESLATEMODE);
 
                 if (Convert.ToBoolean(_convertibleSlateMode))
                 {
@@ -46,9 +46,10 @@ namespace System.Device
                 else
                 {
 
-                    if (TouchCapabilitiesExt.TouchPresent != 0)
+                    var _tabletpc = Convert.ToBoolean(GetSystemMetrics(SystemMetrics.SM_TABLETPC));
+
+                    if (_tabletpc)
                     {
-                        //Has touch, is tablet... Oo HUSduhaisdas
                         mode = DeviceUseMode.Tablet;
                     }
                     else
@@ -74,14 +75,8 @@ namespace System.Device
 
             try
             {
-                if (Convert.ToBoolean(GetSystemMetrics(InternalDeviceMode.SM_CONVERTIBLESLATEMODE)))
-                {
-                    docked = true;
-                }
-                else
-                {
-                    docked = false;
-                }
+                docked = (Convert.ToBoolean(GetSystemMetrics(SystemMetrics.SM_SYSTEMDOCKED)));
+               
             }
             catch (Exception)
             {
